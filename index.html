@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마음에너지 충전 꽃</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+            background-color: {{ background_color }};
+            font-family: 'Nanum Gothic', sans-serif;
+            margin-top: 50px;
+        }
+        .flower {
+            font-size: 100px;
+            margin: 20px;
+        }
+        .energy-bar {
+            width: 80%;
+            height: 30px;
+            background-color: lightgray;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .energy-fill {
+            height: 100%;
+            background-color: lightgreen;
+            width: {{ energy_percent }}%;
+            transition: width 0.5s;
+        }
+        input[type="text"] {
+            width: 70%;
+            height: 40px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        input[type="submit"] {
+            width: 50%;
+            height: 50px;
+            margin-top: 20px;
+            font-size: 20px;
+            background-color: #90EE90;
+            border: none;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+</head>
+<body>
+    <h1>나의 마음 에너지 꽃</h1>
+    <div class="flower">{{ flower_emoji }}</div>
+    <div class="energy-bar">
+        <div class="energy-fill"></div>
+    </div>
+    <h2>마음 에너지 {{ energy_percent }}% (총 {{ message_count }}번 대화)</h2>
+
+    <form method="post">
+        <input type="text" name="message" placeholder="나에게 말을 걸어줘!" required><br>
+        <input type="submit" value="에너지 충전하기!">
+    </form>
+</body>
+</html>
